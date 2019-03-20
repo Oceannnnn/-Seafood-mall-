@@ -1,0 +1,14 @@
+<!--pages/abstract/abstract.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='main_header'>
+  <swiper interval="3000" duration="1000" autoplay='true' circular>
+    <block wx:for="{{imgUrls}}" wx:key="{{itemName}}" wx:for-item="itemName">
+      <swiper-item data-id="{{itemName.goods_id}}" bindtap='{{itemName.type==1?"abstract":"details"}}' data-name="{{itemName.title}}">
+        <image src="{{itemName.pic}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='p_20'>
+  <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+</view>

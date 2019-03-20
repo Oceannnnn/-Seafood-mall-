@@ -1,0 +1,7 @@
+<!--pages/transfer/transfer.wxml-->
+<view class="container">
+	<view class="previewimg">
+		<image src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+	</view>
+</view>
+

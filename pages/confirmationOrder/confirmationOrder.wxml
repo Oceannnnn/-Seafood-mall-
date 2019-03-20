@@ -1,0 +1,94 @@
+<!--pages/confirmationOrder/confirmationOrder.wxml-->
+<view class='confirmationOrder'>
+  <view class='p_20 f_30'>请选择您的收货方式</view>
+  <view class=''>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="flex_cb bor_b p_20">
+        <radio value="2" checked="" />
+        <view class='flex_i arrow_left ml_20 pr'>
+          <form report-submit='true' class='formBtn' data-addressid="{{item.addressId}}" bindsubmit='orderAddress'>
+            <button class='formBtn' form-type='submit'></button>
+          </form>
+          <view class='f_34' wx:if="{{addressId!=0}}">
+            {{name}}
+            <text class='f_28 mr_10'>{{phone}}</text>
+            <view class='f_28 mt_10'>{{location}}</view>
+          </view>
+          <view wx:else class='f_34'>
+            请选择你的地址
+          </view>
+        </view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </label>
+      <label class="flex_i p_20">
+        <radio value="1" checked="" />
+        <view class='f_34 ml_20'>
+          门店自提
+        </view>
+      </label>
+    </radio-group>
+  </view>
+  <image src='../../images/address.png' class='address_line'></image>
+  <view class='flex_i p_20 bor_bom' wx:for="{{goodsList}}" wx:key="{{itemName}}" wx:for-item="itemName">
+    <image src='{{itemName.pic}}' class='goods_img mr_20'></image>
+    <view class='f_32 flex_fs goods_right'>
+      <view class='sheng'>{{itemName.name}}</view>
+      <view class='flex_cb'>
+        <view class='c_ea5 f_30'>￥{{itemName.price}}</view>
+        X{{itemName.num}}
+      </view>
+    </view>
+  </view>
+  <view class='flex_cb p_20 f_30 bor_bom' wx:if="{{radioValue == 2}}">
+    运费
+    <view>￥{{postage}}</view>
+  </view>
+  <view class='bor_bom p_20 f_30'>
+    买家留言
+    <textarea placeholder='(选填)填写内容' bindinput='bindTextArea' class='textarea mt_20' maxlength='60'></textarea>
+  </view>
+  <view class='f_30 bor_bom pr'>
+    <radio-group class="radio-group" bindchange="choosePay">
+      <label class="flex_i bor_b p_20">
+        <radio value="0" checked="checked" />
+        <view class='flex_i'>
+          <image src='../../images/pay.png' class='pay_img mr_20'></image>
+          微信支付
+        </view>
+      </label>
+      <label class="flex_i p_20">
+        <radio value="1" checked="" />
+        <view class='flex_i'>
+          <image src='../../images/yue.png' class='pay_img mr_20'></image>
+          余额支付（{{balance}}）
+        </view>
+      </label>
+    </radio-group>
+    <!-- <form report-submit='true' class='formBtn' bindsubmit='choosePay'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='flex_cb' wx:if="{{payMethod==0}}">
+      <view class='flex_i'>
+        <image src='../../images/pay.png' class='pay_img mr_20'></image>
+        微信支付
+      </view>
+      <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+    </view>
+    <view class='flex_cb' wx:else>
+      <view class='flex_i'>
+        <image src='../../images/yue.png' class='pay_img mr_20'></image>
+        余额支付（{{balance}}）
+      </view>
+      <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+    </view> -->
+  </view>
+</view>
+<view class='footer bg_f flex_i'>
+  <view class='comfirm_lift flex f_30'>
+    实付款：
+    <text class='c_ea5 f_34'>￥{{newCount}}</text>
+  </view>
+  <form report-submit='true' bindsubmit='comfirm'>
+    <button formType="submit" class='b_029 c_f f_32' disabled="{{disabled}}">立即支付</button>
+  </form>
+</view>

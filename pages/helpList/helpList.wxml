@@ -1,0 +1,6 @@
+<!--pages/helpList/helpList.wxml-->
+<view class='bor_t'></view>
+<navigator class='p_40 bor_b f_32 flex_cb' wx:for="{{help}}" wx:key="" url='../help/help?id={{item.id}}'>
+  {{item.title}}
+  <image class="arrow" src="../../images/last_Dawn.png"></image>
+</navigator>

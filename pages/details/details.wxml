@@ -1,0 +1,68 @@
+<!--pages/details/details.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='flex_af p_20'>
+  <image src='{{header_img}}' class='header_img' mode='widthFix'></image>
+</view>
+<scroll-view class="detailsBody mt_20" scroll-x style="width: 100%">
+  <view class="imgList" wx:for="{{shopList}}" wx:key="{{shopList}}" wx:for-index="idx">
+    <image src='{{item.image}}' class='details_img {{item.default==1?"on":""}}' bindtap='bindImg' data-index="{{idx}}" mode='widthFix'></image>
+    <image src='../../images/gou.png' class='gou' hidden='{{item.default==1?"":"hidden"}}'></image>
+  </view>
+</scroll-view>
+<view class='f_30 ml_20 mt_20'>选择商品</view>
+<view class='p_20 shopList'>
+  <view wx:for="{{goodList}}" wx:key="{{goodList}}" wx:for-index="shopindex" class='p_20 bor_b flex_cb'>
+    <view class='flex shop_left pr'>
+      <form report-submit='true' class='formBtn' data-index="{{shopindex}}" bindsubmit='infoDetails'>
+        <button class='formBtn' form-type='submit'></button>
+      </form>
+      <image src='{{item.original_img}}' class='shop_img'></image>
+      <view class='f_34 ml_20 img_left flex_fs'>
+        <view class='sheng'>{{item.goods_name}}</view>
+        <view class='flex_i f_32'>
+          <view class='mr_20'>￥{{item.shop_price}}</view>
+          <view class='text_l c_999 f_30' wx:if="{{item.olr_price!=''}}">￥{{item.olr_price}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='flex_i mt_20'>
+      <image src='../../images/jian.png' class='icon mr_20' wx:if='{{item.num!=0}}' bindtap='bindJian' data-num='{{item.num}}' data-index='{{shopindex}}'></image>
+      <input class='f_30 input' type='number' wx:if='{{item.num!=0}}' bindblur="bindblur" data-stock='{{item.inventory}}' data-num='{{item.num}}' data-index='{{shopindex}}' value='{{item.num}}'></input>
+      <image src='../../images/jia.png' class='icon ml_20' bindtap='bindJia' data-num='{{item.num}}' data-stock='{{item.inventory}}' data-index='{{shopindex}}'></image>
+    </view>
+  </view>
+</view>
+<navigator class='gouwuche bg_f flex_faj' url='../cart/cart' open-type='switchTab'>
+  <image src='../../images/cart.png' class='cart'></image>
+</navigator>
+<view class='footer flex_cb bor_t'>
+  <view class='foot_left'>
+    <view class='c_999 f_28'>{{allNum}}份礼品</view>
+    <view class='f_28 mt_10'>￥
+      <text class='f_34 number'>{{count}}</text>
+    </view>
+  </view>
+  <view class='flex_i'>
+    <button class='button {{allNum>0?"on":""}}' bindtap='comBtn' data-type="0">购物车</button>
+    <button class='button {{allNum>0?"on":""}}' bindtap='comBtn' data-type="1">购买</button>
+  </view>
+</view>
+<view class='ceng bor_t' hidden='{{!hidden}}'>
+  <view class='details_info'>
+    <image src='../../images/cha.png' class='info_cha' bindtap='close'></image>
+    <view class='p_40 bor_b flex'>
+      <image src='{{infoImg}}' class='info_head'></image>
+      <view class='ml_20 flex_fs'>
+        <view class='f_34'>{{infoName}}</view>
+        <view class='flex_i f_34'>
+          <view class='mr_20'>￥{{infoPrice}}</view>
+          <view class='text_l c_999 f_30' wx:if="{{oldPrice!=''}}">￥{{oldPrice}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='p_40 useBody'>
+      <view class='f_28 c_999 mb_20'>使用须知</view>
+      <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+    </view>
+  </view>
+</view>

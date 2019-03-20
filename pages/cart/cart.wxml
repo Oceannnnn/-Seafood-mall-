@@ -1,0 +1,54 @@
+<view wx:if="{{list!=''}}" class='cartBody'>
+  <view class='f_32 flex_cb guanHeader bor_bom'>
+    <text class='ml_20'>共{{cartNum}}件宝贝</text>
+    <view class='gaunli f_32 c_ea5 mr_20' bindtap='showDelBtn' data-select="{{allSelect=='circle'?'success':'circle'}}">
+      <text wx:if="{{showDelBtn}}">管理</text>
+      <text wx:else>完成</text>
+    </view>
+  </view>
+  <view class="cart-box">
+    <view wx:for="{{list}}" wx:key="list" wx:for-index="index" class="bor_b p_20 item flex_i">
+      <icon type="{{item.select}}" color="#01A760" size="20" data-pid="{{item.goods_id}}" data-num='{{item.num}}' data-priceid='{{item.spec_key}}' data-id="{{item.id}}" data-index="{{index}}" data-select="{{item.select}}"
+        bindtap="change" data-showdelbtn='0' data-idx="{{index}}" />
+      <image src="{{item.pic}}" class="goods-img ml_20" mode="widthFix"></image>
+      <view class="goods-info ml_20 mb_20 mt_20">
+        <view class="row mb_20 f_32 flex_cb">
+          <view class="goods-name sheng">{{item.goods_name}}</view>
+          <text class="goods-price">￥{{item.shop_price}}</text>
+        </view>
+        <view class="num-box">
+          <view class="btn-groups">
+            <view class="goods-btn btn-minus" data-index="{{index}}" data-id='{{item.id}}' data-num="{{item.num}}" bindtap="subtraction" data-idx="{{idx}}">—</view>
+            <view class="num">{{item.num}}</view>
+            <view class="goods-btn btn-add f_32" data-stock="{{item.inventory}}" data-index="{{index}}" data-id='{{item.id}}' data-num="{{item.num}}" bindtap="addtion" data-idx="{{idx}}">+</view>
+          </view>
+        </view>
+      </view>
+      <image src='../../images/delete.png' data-index="{{index}}" class='delete' bindtap='delete' data-id='{{item.id}}' data-type="0" data-idx="{{idx}}" data-len="{{itemName.item.length}}"></image>
+    </view>
+  </view>
+</view>
+<view wx:if="{{list==''||login_state==0}}">
+  <view class="list-empty flex_af">
+    <image src='../../images/cart_w.png' class='zanwu'></image>
+    <view class='c_999 mb_20 f_32'>购物车空空如也！去逛逛把~</view>
+    <navigator class='c_999 f_30' wx:if="{{login_state==0}}" url='../toLogin/toLogin'>您还未登陆哦~(点击登陆)</navigator>
+  </view>
+</view>
+<view class="cart-fixbar" wx:if="{{list!=''}}">
+  <view class="allSelect">
+    <icon type="{{allSelect}}" color="#01A760" size="22" data-select="{{allSelect}}" bindtap="allSelect" />
+    <view class="allSelect-text">全选</view>
+  </view>
+  <view class='delsBtn f_28' bindtap='delsBtn' hidden='{{showDelBtn}}'>删除</view>
+  <view class="count f_32 flex" hidden='{{!showDelBtn}}'>
+    <text>合计：￥</text>{{count}}
+  </view>
+  <view class="order pr" hidden='{{!showDelBtn}}'>
+    <form report-submit='true' class='formBtn' bindsubmit='comfirm'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    去结算
+    <text class="allnum ml_10">({{num}})</text>
+  </view>
+</view>

@@ -1,0 +1,159 @@
+/* pages/details/details.wxss */
+@import "../../wxParse/wxParse.wxss";
+.header_img {
+  width: 660rpx;
+  height: 340rpx;
+  box-shadow: 1px 1px 4px #a5a5a5;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  border: 1px solid #fff;
+}
+
+.detailsBody {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  white-space: nowrap;
+  padding: 20rpx 0;
+}
+
+.imgList {
+  margin: 15rpx;
+  display: inline-table;
+  position: relative;
+}
+
+.details_img {
+  width: 200rpx;
+  height: 113rpx;
+  border: 1px solid #fff;
+  box-shadow: 1px 1px 4px #a5a5a5;
+  border-radius: 20rpx;
+}
+.details_img.on{
+  border: 1px solid #01A760;
+}
+.gou{
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  top: -10rpx;
+  right: -10rpx;
+  background: #fff;
+  border-radius: 50%;
+}
+.shop_left{
+  width: 70%;
+}
+.shop_img{
+  width: 150rpx;
+  height: 150rpx;
+}
+.icon{
+  width: 60rpx;
+  height: 60rpx;
+}
+.input{
+  width:50rpx; 
+  border-bottom: 1px solid #01A760;
+  text-align: center;
+}
+.img_left{
+  width: 60%;
+}
+.footer{
+  padding: 30rpx 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  background: #fff;
+}
+.number{
+  font-weight: 600;
+}
+.foot_left{
+  margin-left: 40rpx;
+}
+.button{
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  margin: 0 40rpx 0 0;
+  background: #F7F7F7;
+  color: #B7B7B7;
+}
+.button.on{
+  background: #01A760;
+  color: #fff;
+}
+button.button::after{
+  border: none;
+}
+.shopList{
+  padding-bottom: 300rpx;
+}
+.ceng{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  height: 100vh;
+}
+.zhe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+}
+.details_info{
+  z-index: 100;
+  background: #fff;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: visible;
+}
+.info_img{
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+  background: #fff;
+}
+.info_head{
+  width: 200rpx;
+  height: 200rpx;
+}
+.info_cha{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+}
+.useBody{
+  background: #fff;
+}
+.header{
+  width: 100%;
+  height: 300rpx;
+  position: absolute;
+  top: -150rpx;
+}
+.gouwuche{
+  border: 1px solid #989898;
+  width: 75rpx;
+  height: 75rpx;
+  position: fixed;
+  right: 40rpx;
+  bottom: 200rpx;
+  border-radius: 50%;
+}
+.cart{
+  width: 60%;
+  height: 60%;
+}

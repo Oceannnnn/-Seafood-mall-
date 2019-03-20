@@ -1,0 +1,23 @@
+/* pages/orderDetails/orderDetails.wxss */
+.shop_left{
+  width: 70%;
+}
+.mb_30{
+  margin-bottom: 30rpx;
+}
+.mt_30{
+  margin-top: 30rpx;
+}
+.shop_body{
+  padding: 0 40rpx;
+}
+.footer{
+  width: 100%;
+  position: fixed;
+  bottom: 3%;
+}
+.footer .text{
+  border: 1px solid #01A760;
+  border-radius: 50rpx;
+  padding: 20rpx 40rpx;
+}

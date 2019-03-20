@@ -1,0 +1,30 @@
+/**index.wxss**/
+.main_header swiper{
+  height:517rpx; 
+  width: 100%;
+}
+.main_header swiper image{
+  width: 100%;
+  height: 100%;
+}
+.list_item{
+  width: 100%;
+}
+.i_header{
+  /* position: absolute; */
+  background: #F1F1F1;
+  width: 100%;
+  padding: 20rpx 0;
+}
+.i_header image{
+  width: 46rpx;
+  height: 46rpx;
+}
+.i_search{
+  width: 90%;
+  border: 1px solid #999;
+  border-radius: 10rpx;
+  padding: 5rpx 20rpx;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, .8);
+}

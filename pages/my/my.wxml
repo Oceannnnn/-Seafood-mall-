@@ -1,0 +1,66 @@
+<!--pages/my/my.wxml-->
+<view class="my-wrap f_32">
+  <view class="p_40 bor_b">
+    <view wx:if="{{state==0}}" class='pr mb_20'>
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='getUserInfo'></button>
+      <view class='f_32 flex_i'>
+        <view class='avatar_info'>
+          <image class="avatar" src="../../images/wu.png"></image>
+        </view>
+        <view>未登录
+          <text class='f_28'>(请点击登录)</text>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="flex_i">
+      <image class="avatar mr_20" src="{{userInfo.avatarUrl}}"></image>
+      <view>{{userInfo.nickName}}</view>
+    </view>
+  </view>
+  <view class="nav-warp">
+    <view class='my_footer f_30'>
+      <view class="nav-item p_40 flex_cb pr bor_b pr">
+        <form report-submit='true' class='formBtn' bindsubmit='allorder'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <view class='flex_i'>
+          <image class="small mr_20" src="../../images/gm.png"></image>
+          <view>我的购买记录</view>
+        </view>
+        <view class='flex_i f_28 c_999'>
+          查看全部
+          <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+        </view>
+      </view>
+      <view class="nav-item pr flex_cb bor_b pr">
+        <form report-submit='true' class='formBtn' bindsubmit='balance'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <view class='flex_i'>
+          <image class="small mr_20" src="../../images/ye.png"></image>
+          <view class='flex_i'>余额
+            <text class='f_28'>(￥{{balance}})</text>
+          </view>
+        </view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <view class="nav-item pr flex_cb bor_b pr">
+        <form report-submit='true' class='formBtn' bindsubmit='myadd'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <view class='flex_i'>
+          <image class="small mr_20" src="../../images/dz.png"></image>
+          <view>我的地址</view>
+        </view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <navigator class="nav-item pr flex_cb bor_b" url="../about/about">
+        <view class='flex_i'>
+          <image class="small mr_20" src="../../images/lx.png"></image>
+          <view>联系我们</view>
+        </view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </navigator>
+    </view>
+  </view>
+</view>

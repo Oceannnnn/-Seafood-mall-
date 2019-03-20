@@ -1,0 +1,49 @@
+/* pages/allorder/allorder.wxss */
+.nav-scroll{
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.scroll-view_H{
+  white-space:nowrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+.nav-name{
+  display:inline-block;
+  border-bottom: 2px solid transparent;
+  width: 50%;
+  text-align: center;
+  padding: 30rpx 0;
+}
+.nav-hover{
+  color: #E93D3B;
+  border-bottom: 2px solid #E93D3B;
+}
+.body_none{
+  margin-top: 400rpx;
+}
+.body_scroll{
+  margin-top: 120rpx;
+}
+.orderRight{
+  width:100%;
+}
+.order_footer{
+  justify-content: flex-end;
+}
+.footer_item{
+  padding: 15rpx 30rpx;
+  background: #01A760;
+  border: 1px solid #01A760;
+  border-radius: 50rpx;
+  color: #fff;
+  margin: 20rpx;
+}
+.footer_item.on{
+  background: #fff;
+  color: #01A760;
+}

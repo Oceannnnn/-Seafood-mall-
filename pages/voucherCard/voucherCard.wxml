@@ -1,0 +1,23 @@
+<!--pages/voucherCard/voucherCard.wxml-->
+<image src='{{image}}' class='sm_img'></image>
+<view class='voucherCard bor_t flex_af'>
+  <view wx:if="{{status!=5}}" class='flex_af mt_16'>
+    <!-- <image src='{{info.pic}}' class='card_img'></image> -->
+    <view class='title f_30 c_999'>
+      {{info.user_note}}
+    </view>
+    <!-- <view class='title f_40 mt_20'>
+    {{info.name}}
+    </view> -->
+    <view class='mt_20 money f_34'>{{info.order_amount}}元</view>
+    <button class='s_foot' bindtap='bindCom'>确认收货</button>
+  </view>
+  <view wx:else class='f_32 mt_16'>
+    已被确认
+  </view>
+  <view class='footer flex_i f_28'>
+    <navigator class='mr_20' url='../index/index' open-type='switchTab'>我也要送</navigator>
+    |
+    <navigator class='ml_20' url='../index/index' open-type='switchTab'>返回首页</navigator>
+  </view>
+</view>

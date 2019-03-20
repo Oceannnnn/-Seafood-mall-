@@ -1,0 +1,29 @@
+<!--pages/allorder/allorder.wxml-->
+<view class="nav-scroll f_32">
+  <view class="scroll-view_H">
+    <view wx:for="{{HeaderList}}" wx:key="item" class="nav-name pr">
+      <form report-submit='true' class='formBtn' data-id="{{item.id}}" data-type='{{item.type}}' bindsubmit='toList'>
+        <button class='formBtn' form-type='submit'></button>
+      </form>
+      <text class="p_20 {{item.id == currentId ? 'nav-hover' : ''}}">{{item.name}}</text>
+    </view>
+  </view>
+</view>
+<view wx:if="{{orderList!=''}}" class='body_scroll'>
+  <view class='p_20 bor_b orderRight' wx:for="{{orderList}}" wx:key="{{orderList}}">
+    <!-- <image class='order_img mt_20' src='{{item.card}}'></image> -->
+    <!-- <view class='orderRight ml_20 mt_20'> -->
+      <view class='f_30'>订单号：{{item.order_no}}</view>
+      <view class='f_28 c_999 mt_20'>购买时间：{{item.add_time}}</view>
+      <view class='f_30 mt_20'>价格：￥{{item.order_amount}}</view>
+      <view class='f_28 mt_20' wx:if="{{item.status==5}}">订单状态：已完成</view>
+      <view class='flex order_footer f_28 mr_20'>
+        <view class='footer_item' wx:if="{{currentId==1&&item.status==2}}" data-order_no="{{item.order_no}}" bindtap='transfer'>立即转赠</view>
+        <view class='footer_item on' bindtap='orderDetails' data-id="{{item.order_id}}">订单详情</view>
+      </view>
+    <!-- </view>s -->
+  </view>
+</view>
+<view wx:else class='flex_af body_none'>
+  <text class='f_30'>当前还没有购买记录</text>
+</view>

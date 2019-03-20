@@ -1,0 +1,169 @@
+.p_40{
+  padding: 40rpx;
+}
+.p_20{
+  padding: 20rpx;
+}
+.c_029{
+  color: #E90606;
+}
+.b_029{
+  background: #E90606;
+}
+.c_f{
+  color: #fff;
+}
+.flex_j{
+  display: flex;
+  justify-content: center;
+}
+.flex_faj{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flex_fs{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.flex{
+  display: flex;
+}
+.flex_i{
+  display: flex;
+  align-items: center;
+}
+.flex_ja{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex_cb{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex_af{
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+}
+.flex_f {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mt_20{
+  margin-top: 20rpx;
+}
+.mt_10{
+  margin-top: 10rpx;
+}
+.mb_20{
+  margin-bottom: 20rpx;
+}
+.mb_40{
+  margin-bottom: 40rpx;
+}
+.ml_20{
+  margin-left: 20rpx;
+}
+.mr_20{
+  margin-right: 20rpx;
+}
+.f_32{
+  font-size: 32rpx;
+}
+.f_34{
+  font-size: 34rpx;
+}
+.f_30{
+  font-size: 30rpx;
+}
+.f_28{
+  font-size: 28rpx;
+}
+.bor_b{
+  border-bottom: 1px solid #dbdbdb;
+}
+.bor_t{
+  border-top: 1px solid #dbdbdb;
+}
+.bor_l{
+  border-left: 1px solid #dbdbdb;
+}
+.bor_r{
+  border-right: 1px solid #dbdbdb;
+}
+.c_999{
+  color: #999;
+}
+.s_foot{
+  width:100%;
+  color: #fff;
+  background: #E90606;
+  font-size: 36rpx;
+  border-radius:10rpx; 
+  margin:0 20rpx;
+}
+.pr{
+  position: relative;
+}
+.zanwu{
+  margin-top: 300rpx;
+  width: 160rpx;
+  height: 160rpx;
+}
+.bor_top{
+  border-top:20rpx solid #F7F7F7;
+}
+.bor_bom{
+  border-bottom:20rpx solid #F7F7F7;
+}
+.sheng{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.sheng2{
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  -webkit-box-orient:vertical;
+}
+.arrow {
+  width: 36rpx;
+  height: 36rpx;
+}
+.c_f68{
+  color: #F68136;
+}
+.c_5e8{
+  color: #5E83C5;
+}
+.c_5c5{
+  color: #5C5C5C;
+}
+.formBtn{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.order_img{
+  width: 220rpx;
+  height: 150rpx;
+  border: 1px solid #fff;
+  box-shadow: 1px 1px 4px #a5a5a5;
+  border-radius: 20rpx;
+}
+.bg_f{
+  background: #fff;
+}
+.text_l {
+  text-decoration: line-through;
+}

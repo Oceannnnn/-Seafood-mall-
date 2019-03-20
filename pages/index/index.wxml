@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class='main_header pr'>
+  <view class='i_header'>
+    <view class='i_search f_30 flex_i'>
+      <image src='../../images/search.png' class='mr_20'></image>
+      <input placeholder='搜索您想要的商品' bindconfirm='bindInputChange'></input>
+    </view>
+  </view>
+  <swiper interval="3000" duration="1000" autoplay='true' circular>
+    <block wx:for="{{imgUrls}}" wx:key="{{itemName}}" wx:for-item="itemName">
+      <swiper-item class="pr">
+        <form report-submit='true' class='formBtn' data-name="{{itemName.title}}" bindsubmit='abstract'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <image src="{{itemName.pic}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view wx:for="{{list}}" wx:key="{{list}}" class='pr'>
+  <form report-submit='true' class='formBtn' data-id="{{item.id}}" data-name="{{item.name}}" bindsubmit='details'>
+    <button class='formBtn' form-type='submit'></button>
+  </form>
+  <image src="{{item.image}}" class="list_item"  mode='widthFix'/>
+</view>
+<view class='flex_af f_28 p_40'>版权归属 @宁德市东洋水产</view>

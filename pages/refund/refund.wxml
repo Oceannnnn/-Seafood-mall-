@@ -1,0 +1,42 @@
+<!--pages/refund/refund.wxml-->
+<view wx:if="{{status==3}}">
+  <view class='p_40 c_999 f_30'>退款订单</view>
+  <view class='flex_i p_40 f_32 bg_f'>
+    <view class='mr_20'>订单号</view>
+    <view class='mr_20'>{{id}}</view>
+  </view>
+  <view class='p_40 c_999 f_30'>退款原因</view>
+  <view class='p_40 f_32 bg_f'>
+    <textarea bindinput='textarea' placeholder='请填写退款原因' maxlength='120'></textarea>
+  </view>
+  <view class='p_40 c_999 f_30'>请填写退款人信息</view>
+  <view class='p_20 f_32 bg_f'>
+    <view class='flex_i bor_b p_20'>
+      <view class='mr_20'>姓名</view>
+      <input class='mr_20' placeholder='请输入完整姓名' bindinput='bindName'></input>
+    </view>
+    <view class='flex_i p_20'>
+      <view class='mr_20'>电话</view>
+      <input class='mr_20' placeholder='请输入正确电话' type='number' bindinput='bindPhone'></input>
+    </view>
+  </view>
+  <view class='p_40 f_28 flex_i'>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="">
+        <checkbox value='0'/>
+      </label>
+      <text class='text ml_20' bindtap='bindRefund'>退款规定</text>
+    </checkbox-group>
+  </view>
+  <view class='refundBtn f_32' bindtap='refundBtn'>申请退款</view>
+</view>
+<view wx:elif="{{status==1}}" class='flex_af time_img'>
+  <image src='../../images/time.png' class='time'></image>
+  <view class='mt_20 f_34'>提交成功</view>
+  <view class='mt_20 f_28'>您的申请退款正在审核中，请耐心等待！</view>
+</view>
+<view wx:elif="{{status==2}}" class='flex_af time_img'>
+  <image src='../../images/time.png' class='time'></image>
+  <view class='mt_20 f_34'>退款成功</view>
+  <view class='mt_20 f_28'>如有疑问，请联系客服</view>
+</view>

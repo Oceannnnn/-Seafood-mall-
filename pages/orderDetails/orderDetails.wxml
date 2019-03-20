@@ -1,0 +1,35 @@
+<!--pages/orderDetails/orderDetails.wxml-->
+<view class='bor_b shop_body'>
+  <view wx:for="{{shopList}}" wx:key="{{shopList}}" class='flex_cb f_28 mb_30 mt_30'>
+    <view class='shop_left'>
+    <view>{{item.name}}</view>
+    <view class='mt_10'>￥{{item.price}}</view>
+    </view>
+    <view class='c_999'>
+      X{{item.count}}
+    </view>
+  </view>
+</view>
+<view class='p_40'>
+  <view class='flex_cb f_28 mb_30 c_999'>
+    <view>
+      订单号：
+    </view>
+    {{order.order_no}}
+  </view>
+  <view class='flex_cb f_28 mb_30 c_999'>
+    <view>
+      下单时间：
+    </view>
+    {{order.add_time}}
+  </view>
+  <view class='flex_cb f_28 c_999'>
+    <view>
+      实付款：
+    </view>
+    {{order.order_amount}}
+  </view>
+</view>
+<view class='footer f_28 flex_af' wx:if="{{type==1&&order.status!=5}}" bindtap='bindRefund' data-id='{{order.order_id}}'>
+  <view class='text'>申请退款</view> 
+</view>

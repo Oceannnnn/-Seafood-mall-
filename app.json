@@ -1,0 +1,55 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/refund/refund",
+    "pages/helpList/helpList",
+    "pages/help/help",
+    "pages/voucherCard/voucherCard",
+    "pages/toLogin/toLogin",
+    "pages/abstract/abstract",
+    "pages/payResults/payResults",
+    "pages/transfer/transfer",
+    "pages/details/details",
+    "pages/confirmationOrder/confirmationOrder",
+    "pages/allorder/allorder",
+    "pages/orderDetails/orderDetails",
+    "pages/balance/balance",
+    "pages/about/about",
+    "pages/recharge/recharge",
+    "pages/record/record",
+    "pages/my/my",
+    "pages/myadd/myadd",
+    "pages/cart/cart"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "港动你",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "backgroundColor": "#fff",
+    "selectedColor": "#333",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人中心",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_active.png"
+      }
+    ]
+  }
+}
